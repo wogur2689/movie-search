@@ -19,8 +19,8 @@ const pageTitle = computed(() =>
 
 async function requestMovies(endpoint, params = {}) {
   if (!TMDB_API_KEY) {
-    errorMessage.value =
-      "API 키가 없습니다. .env 파일에 VITE_TMDB_API_KEY를 설정해주세요.";
+    errorMessage.value = "검색 결과를 불러오지 못했습니다.";
+    console.error("API 키가 없습니다. .env 파일에 VITE_TMDB_API_KEY를 설정해주세요");
     movies.value = [];
     return;
   }
